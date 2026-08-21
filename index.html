@@ -258,15 +258,19 @@
 <header class="hero">
   <p class="eyebrow">Daniel González</p>
   <h1>Computational Biologist &amp; AI/ML Engineer</h1>
-  <p class="tagline">Postdoc at Tec de Monterrey × DTU through Dec 2026.</p>
+  <p class="tagline">Postdoc at Tec de Monterrey × DTU BRIGHT through Dec 2026 — open to what comes next.</p>
   <p class="summary">
     Ph.D. bioinformatician with parallel training in software engineering and an M.Sc. in AI &amp; Data Science.
-    I train models, measure them against published baselines with bootstrap CIs, and ship tools — from a multi-organism CRISPR designer to a Spanish-language real-estate appraisal app currently used by practicing appraisers in Monterrey.
+    I train models and — more to the point — build the evaluations that decide whether they actually work:
+    cluster-aware splits, bootstrap confidence intervals, head-to-head against reproduced baselines, and
+    negative results reported rather than buried. I have twice published benchmarks where my own model lost.
+    I also ship the tools, from a multi-organism CRISPR designer to a Spanish-language appraisal app in
+    production use with practising appraisers in Monterrey.
   </p>
   <p class="contact">
     Monterrey, Mexico
     <span class="sep">·</span>
-    <a href="mailto:1438751@gmail.com">1438751@gmail.com</a>
+    <a href="mailto:sleepy.komodo@protonmail.com">sleepy.komodo@protonmail.com</a>
     <span class="sep">·</span>
     <a href="https://github.com/GDanielGzz">github</a>
     <span class="sep">·</span>
@@ -278,6 +282,28 @@
 
 <section>
   <h2>selected work</h2>
+
+  <article class="project">
+    <header>
+      <h3>bio-ml-eval-protocols</h3>
+      <p class="lead">An opinionated, runnable standard for evaluating biological ML without lying to yourself — three documents, plus a Python package that enforces them.</p>
+    </header>
+    <p class="result">
+      A written standard saying <em>use cluster-aware splits</em> is a claim; a function that refuses to hand you a leaking split is a dependency. <code>bioeval</code> ships group-aware splitting, split leakage auditing, cluster-aware percentile/BCa bootstrap intervals, and paired head-to-head tests that report a tie as a tie. <code>66 tests</code>, CI on Python 3.10–3.12. The flagship demo reproduces homology leakage from scratch in ten seconds with no data download: same data, same model, same metric, <code>+11.8 AUC</code> of pure inflation — and an error bar five times too narrow.
+    </p>
+    <p class="stack">
+      <span class="chip">Python</span>
+      <span class="chip">numpy</span>
+      <span class="chip">scipy</span>
+      <span class="chip">pytest</span>
+      <span class="chip">GitHub Actions</span>
+    </p>
+    <p class="links">
+      <a href="https://github.com/GDanielGzz/bio-ml-eval-protocols">github</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/GDanielGzz/bio-ml-eval-protocols#the-problem-reproduced-from-scratch-in-ten-seconds">the demo</a>
+    </p>
+  </article>
 
   <article class="project">
     <header>
@@ -296,11 +322,11 @@
       <span class="chip">HF Spaces</span>
     </p>
     <p class="links">
-      <a href="#">live demo</a>
+      <a href="https://huggingface.co/spaces/SleepyKomodo/amp-classifier">live demo</a>
       <span class="sep">·</span>
-      <a href="#">github</a>
+      <a href="https://github.com/GDanielGzz/amp-classifier">github</a>
       <span class="sep">·</span>
-      <a href="#">model card</a>
+      <a href="https://github.com/GDanielGzz/amp-classifier/blob/HEAD/docs/model_card.md">model card</a>
     </p>
   </article>
 
@@ -321,9 +347,28 @@
       <span class="chip">TypeScript</span>
     </p>
     <p class="links">
-      <a href="#">github</a>
+      <a href="https://github.com/GDanielGzz/crispr-designer">github</a>
       <span class="sep">·</span>
-      <a href="#">technical report (PDF)</a>
+      <a href="https://github.com/GDanielGzz/crispr-designer/blob/HEAD/report/technical_report.pdf">technical report (PDF)</a>
+    </p>
+  </article>
+
+  <article class="project">
+    <header>
+      <h3>ALE Outcome Predictor</h3>
+      <p class="lead">Predicts which genes mutate under adaptive laboratory evolution, by fusing genome-scale-model flux features with protein language-model embeddings.</p>
+    </header>
+    <p class="result">
+      Trained on five real ALEdb <em>E. coli</em> selections (86 convergent positives) with leakage-free cluster-aware cross-validation. The flux + ESM2 fusion beats flux-only features in <code>73%</code> of random seeds — reported as the seed distribution rather than the single favourable run, because one lucky seed is not a result.
+    </p>
+    <p class="stack">
+      <span class="chip">Python</span>
+      <span class="chip">COBRApy</span>
+      <span class="chip">ESM2</span>
+      <span class="chip">scikit-learn</span>
+    </p>
+    <p class="links">
+      <a href="https://github.com/GDanielGzz/ale-outcome-predictor">github</a>
     </p>
   </article>
 
@@ -344,11 +389,6 @@
       <span class="chip">PyInstaller</span>
       <span class="chip">InnoSetup</span>
     </p>
-    <p class="links">
-      <a href="#">case study</a>
-      <span class="sep">·</span>
-      <a href="#">user manual (Spanish)</a>
-    </p>
   </article>
 
   <article class="project">
@@ -368,11 +408,7 @@
       <span class="chip">ESMFold</span>
     </p>
     <p class="links">
-      <a href="#">live demo</a>
-      <span class="sep">·</span>
-      <a href="#">github</a>
-      <span class="sep">·</span>
-      <a href="#">90-sec video</a>
+      <a href="https://github.com/GDanielGzz/foldit-lite">github</a>
     </p>
   </article>
 
@@ -390,13 +426,6 @@
       <span class="chip">Vite</span>
       <span class="chip">Tailwind</span>
     </p>
-    <p class="links">
-      <a href="#">live demo</a>
-      <span class="sep">·</span>
-      <a href="#">github</a>
-      <span class="sep">·</span>
-      <a href="#">model reference (MODEL.md)</a>
-    </p>
   </article>
 
   <article class="project">
@@ -413,11 +442,6 @@
       <span class="chip">Streamlit</span>
       <span class="chip">LangChain</span>
       <span class="chip">FAISS</span>
-    </p>
-    <p class="links">
-      <a href="#">github</a>
-      <span class="sep">·</span>
-      <a href="#">technical writeup</a>
     </p>
   </article>
 
@@ -437,9 +461,6 @@
       <span class="chip">KivyMD</span>
       <span class="chip">PostgreSQL</span>
     </p>
-    <p class="links">
-      <a href="#">github</a>
-    </p>
   </article>
 
   <p class="other-work">
@@ -451,9 +472,21 @@
   <h2>publications</h2>
 
   <p class="pub">
+    <em>Cross-scale modelling and adaptive laboratory evolution converge on menaquinone biosynthesis as a thermal-stability bottleneck for recombinant protein production in</em> Bacillus subtilis.
+    — <strong>González D</strong>, Gutiérrez-Uribe JA.
+    Lead author; manuscript in preparation (2026). Tec de Monterrey × DTU BRIGHT.
+  </p>
+
+  <p class="pub">
+    <em>Sustainable single-cell protein production from agro-industrial side streams: bioprocessing strategies, economic considerations, and circular-economy integration.</em>
+    — Chavarria-Quicaño E, <strong>González-Lozano GD</strong>, Franco-Morgado M, Gutiérrez-Uribe JA.
+    Review article, in review (2026).
+  </p>
+
+  <p class="pub">
     <em>Toward sustainable single-cell protein: Biological limitations and market trends.</em>
     — <strong>González Lozano GD</strong>, Rosales Toral FL, Franco-Morgado M, Yang L, Gutiérrez-Uribe JA.
-    Review article, in revision (2026). Tec de Monterrey × Novo Nordisk Foundation Center for Biosustainability, DTU.
+    Review article, in review (2026). Tec de Monterrey × DTU BRIGHT.
   </p>
 
   <p class="pub">
@@ -479,12 +512,12 @@
 <section>
   <h2>now</h2>
   <div class="now">
-    <p class="updated">updated may 2026</p>
+    <p class="updated">updated august 2026</p>
     <ul>
-      <li>Postdoc at Tec de Monterrey × DTU on industrial-strain bioprocess work. Contract ends Dec 2026.</li>
-      <li>Recently shipped the AMP classifier — ESM2-650M head beats engineered-feature baselines by +5.5 AUC with non-overlapping CIs.</li>
-      <li>Job-hunting for biotech AI/ML roles starting early 2027 — research engineer, applied scientist, freelance bio-AI tooling all on the table.</li>
-      <li>Reading: [a recent paper you'd defend in conversation] · [another].</li>
+      <li>Postdoc at Tec de Monterrey × DTU BRIGHT on industrial-strain bioprocess work. Contract ends Dec 2026.</li>
+      <li>Just shipped <a href="https://github.com/GDanielGzz/bio-ml-eval-protocols">bio-ml-eval-protocols</a> — the evaluation standard behind every number on this page, now enforced by a tested package rather than asserted in prose.</li>
+      <li>Lead-author manuscript in preparation: constraint-based prediction, a 45&nbsp;°C evolution experiment, and structural analysis converging on the same causal residue.</li>
+      <li>Open to what's next from early 2027 — computational biology, ML and backend engineering, model evaluation and benchmark design. Remote or relocating; no strong geographic preference.</li>
     </ul>
   </div>
 </section>
@@ -510,7 +543,7 @@
   <div class="affil-row">
     <a class="affil" href="https://www.u-tokyo.ac.jp/" title="The University of Tokyo — Ph.D. (2017–2022), M.Sc. (2015–2017), Teaching Assistant (2015–2025)">U-Tokyo</a>
     <a class="affil" href="https://www.dtu.dk/" title="Technical University of Denmark — current postdoc collaboration on industrial-strain bioprocess work (2025–2026)">DTU</a>
-    <a class="affil" href="https://www.biosustain.dtu.dk/" title="Novo Nordisk Foundation Center for Biosustainability — joint scale-up and tech-transfer work">Biosustain</a>
+    <a class="affil" href="https://bright.dtu.dk/" title="DTU BRIGHT — successor to the Novo Nordisk Foundation Center for Biosustainability (closed 31 Dec 2025); joint scale-up and tech-transfer work">DTU BRIGHT</a>
     <a class="affil" href="https://www.jircas.go.jp/" title="Japan International Research Center for Agricultural Sciences — Research Assistant (2017–2025, on-site then remote)">JIRCAS</a>
     <a class="affil" href="https://www.fz-juelich.de/" title="Forschungszentrum Jülich — research collaboration">FZJ</a>
     <a class="affil" href="https://www.irri.org/" title="International Rice Research Institute — research collaboration">IRRI</a>
@@ -523,7 +556,7 @@
 <footer>
   <span>© 2026 Daniel González</span>
   <span>
-    <a href="mailto:1438751@gmail.com">email</a> ·
+    <a href="mailto:sleepy.komodo@protonmail.com">email</a> ·
     <a href="https://github.com/GDanielGzz">github</a> ·
     <a href="https://huggingface.co/SleepyKomodo">hf</a>
   </span>
