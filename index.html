@@ -311,7 +311,7 @@
       <p class="lead">Antimicrobial peptide discriminator on cluster-aware splits, plus a multi-label activity head and a discriminator-in-the-loop mutant designer.</p>
     </header>
     <p class="result">
-      ESM2-650M frozen + MLP head: AUC <code>0.919 [0.906–0.931]</code>, MCC <code>0.697 [0.667–0.730]</code> — beats XGBoost over 428 engineered features by <code>+5.5 AUC</code> with non-overlapping 95% bootstrap CIs. mmseqs2 clustering at 40% identity for the splits; no test-set iteration.
+      ESM2-650M frozen + MLP head: AUC <code>0.919 [0.906–0.931]</code>, MCC <code>0.697 [0.667–0.730]</code> — beats XGBoost over 428 engineered features by <code>+5.5 AUC</code> with non-overlapping 95% bootstrap CIs. mmseqs2 clustering at 40% identity for the splits; no test-set iteration. CI on Python 3.11–3.13.
     </p>
     <p class="stack">
       <span class="chip">Python</span>
@@ -359,7 +359,7 @@
       <p class="lead">Predicts which genes mutate under adaptive laboratory evolution, by fusing genome-scale-model flux features with protein language-model embeddings.</p>
     </header>
     <p class="result">
-      Trained on five real ALEdb <em>E. coli</em> selections (86 convergent positives) with leakage-free cluster-aware cross-validation. The flux + ESM2 fusion beats flux-only features in <code>73%</code> of random seeds — reported as the seed distribution rather than the single favourable run, because one lucky seed is not a result.
+      Trained on five real ALEdb <em>E. coli</em> selections (86 convergent positives) with leakage-free cluster-aware cross-validation. The flux + ESM2 fusion beats flux-only features in <code>73%</code> of random seeds — reported as the seed distribution rather than the single favourable run, because one lucky seed is not a result. Tested, with CI on Python 3.10–3.12.
     </p>
     <p class="stack">
       <span class="chip">Python</span>
@@ -397,7 +397,7 @@
       <p class="lead">Browser puzzle game where mutating residues triggers a live ESMFold structure re-prediction, scored as Cα-RMSD to a target backbone.</p>
     </header>
     <p class="result">
-      Background-warmed puzzle queue with asyncio-locked refills so player clicks never wait on 3–15 s ESMFold latency. Three-check validator gates every generated puzzle: endpoint reachable, RMSD gradient usable, solvable within budget.
+      Background-warmed puzzle queue with asyncio-locked refills so player clicks never wait on 3–15 s ESMFold latency. Three-check validator gates every generated puzzle: endpoint reachable, RMSD gradient usable, solvable within budget. <code>111</code> backend tests with ESMFold stubbed out; CI on backend and frontend.
     </p>
     <p class="stack">
       <span class="chip">Python</span>
